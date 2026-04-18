@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id        String     @id @default(cuid())
+  name      String?
+  email     String     @unique
+  password  String
+  role      String     @default("user")
+  purchases Purchase[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Location {
+  id           String      @id @default(cuid())
+  name         String
+  slug         String      @unique
+  continent    String
+  country      String?
+  state        String?
+  city         String?
+  parentId     String?
+  parent       Location?   @relation("LocationHierarchy", fields: [parentId], references: [id])
+  children     Location[]  @relation("LocationHierarchy")
+  itineraries  Itinerary[]
+  hasItinerary Boolean     @default(false)
+  mapCode      String?
+  createdAt    DateTime    @default(now())
+}
+
+model Category {
+  id          String      @id @default(cuid())
+  name        String
+  slug        String      @unique
+  icon        String?
+  description String?
+  itineraries Itinerary[]
+  createdAt   DateTime    @default(now())
+}
+
+model Itinerary {
+  id          String     @id @default(cuid())
+  title       String
+  slug        String     @unique
+  summary     String
+  highlights  String     @default("[]")
+  includes    String     @default("[]")
+  excludes    String     @default("[]")
+  price       Float
+  duration    Int
+  locationId  String
+  location    Location   @relation(fields: [locationId], references: [id])
+  categoryId  String
+  category    Category   @relation(fields: [categoryId], references: [id])
+  days        Day[]
+  images      String     @default("[]")
+  published   Boolean    @default(false)
+  purchases   Purchase[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Day {
+  id          String     @id @default(cuid())
+  itineraryId String
+  itinerary   Itinerary  @relation(fields: [itineraryId], references: [id], onDelete: Cascade)
+  dayNumber   Int
+  title       String
+  description String
+  activities  Activity[]
+}
+
+model Activity {
+  id          String   @id @default(cuid())
+  dayId       String
+  day         Day      @relation(fields: [dayId], references: [id], onDelete: Cascade)
+  startTime   String
+  endTime     String
+  title       String
+  description String
+  location    String?
+  type        String?
+  tips        String?
+  order       Int
+}
+
+model Purchase {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  itineraryId String
+  itinerary   Itinerary @relation(fields: [itineraryId], references: [id])
+  amount      Float
+  createdAt   DateTime  @default(now())
+}
+
+model CustomRequest {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  destination String
+  startDate   String
+  endDate     String
+  travelers   Int
+  activities  String   @default("[]")
+  budget      String
+  notes       String?
+  status      String   @default("pending")
+  createdAt   DateTime @default(now())
+}
