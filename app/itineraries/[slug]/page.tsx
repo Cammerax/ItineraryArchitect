@@ -10,7 +10,7 @@ import Link from "next/link";
 import PurchaseButton from "@/components/itinerary/PurchaseButton";
 import {
   Globe2, Clock, Star, CheckCircle2, XCircle, Lock, Plane,
-  MapPin, Utensils, Camera, Mountain, Building2, Coffee, AlertTriangle
+  MapPin, Utensils, Camera, Mountain, Building2, Coffee, AlertTriangle, Download
 } from "lucide-react";
 
 const ACTIVITY_ICONS: Record<string, React.ElementType> = {
@@ -160,7 +160,20 @@ export default async function ItineraryDetailPage({
 
           {/* Day-by-Day — locked unless purchased */}
           <div>
-            <h2 className="font-bold text-stone-900 text-xl mb-4">Day-by-Day Itinerary</h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="font-bold text-stone-900 text-xl">Day-by-Day Itinerary</h2>
+              {purchased && (
+                <a
+                  href={`/api/itineraries/${itinerary.id}/export`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-sm text-amber-700 hover:text-amber-800 font-medium border border-amber-300 hover:border-amber-400 rounded-lg px-3 py-1.5 transition-colors"
+                >
+                  <Download className="h-3.5 w-3.5" />
+                  Export PDF
+                </a>
+              )}
+            </div>
             {!purchased ? (
               <Card className="border-2 border-dashed border-amber-300 bg-amber-50/50">
                 <CardContent className="p-8 text-center">
@@ -263,9 +276,15 @@ export default async function ItineraryDetailPage({
                     <CheckCircle2 className="h-5 w-5" />
                     <span className="font-medium">You own this itinerary</span>
                   </div>
-                  <p className="text-xs text-stone-500">
-                    Your full day-by-day plan is displayed above.
-                  </p>
+                  <a
+                    href={`/api/itineraries/${itinerary.id}/export`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full bg-amber-600 hover:bg-amber-700 text-white rounded-lg py-2.5 px-4 text-sm font-medium transition-colors"
+                  >
+                    <Download className="h-4 w-4" />
+                    Download PDF
+                  </a>
                 </div>
               ) : (
                 <div className="space-y-3">
