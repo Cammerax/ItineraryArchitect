@@ -23,7 +23,7 @@ export default function AdminSidebar() {
     <aside className="w-64 bg-stone-900 text-white flex flex-col hidden md:flex">
       <div className="p-6 border-b border-stone-800">
         <div className="flex items-center gap-2">
-          <Globe2 className="h-6 w-6 text-amber-400" />
+          <Globe2 className="h-6 w-6 text-sage-400" />
           <div>
             <p className="font-bold text-sm">Itinerary Architect</p>
             <p className="text-xs text-stone-400">Admin Portal</p>
@@ -41,7 +41,7 @@ export default function AdminSidebar() {
               className={cn(
                 "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
                 active
-                  ? "bg-amber-600 text-white"
+                  ? "bg-sage-600 text-white"
                   : "text-stone-400 hover:text-white hover:bg-stone-800"
               )}
             >

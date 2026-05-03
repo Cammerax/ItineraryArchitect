@@ -59,8 +59,8 @@ export default function AdminRequestsClient({ requests: initial }: { requests: R
                   onClick={() => setExpanded(isExpanded ? null : req.id)}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
-                      <MessageSquare className="h-5 w-5 text-amber-600" />
+                    <div className="w-10 h-10 rounded-lg bg-sage-50 flex items-center justify-center flex-shrink-0">
+                      <MessageSquare className="h-5 w-5 text-sage-600" />
                     </div>
                     <div>
                       <p className="font-semibold text-stone-900">{req.destination}</p>
@@ -80,15 +80,15 @@ export default function AdminRequestsClient({ requests: initial }: { requests: R
                   <div className="border-t border-stone-100 p-4 bg-stone-50 space-y-4">
                     <div className="grid sm:grid-cols-3 gap-4">
                       <div className="flex items-center gap-2 text-sm text-stone-700">
-                        <Calendar className="h-4 w-4 text-amber-500" />
+                        <Calendar className="h-4 w-4 text-sage-500" />
                         <span>{req.startDate} → {req.endDate}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-stone-700">
-                        <Users className="h-4 w-4 text-amber-500" />
+                        <Users className="h-4 w-4 text-sage-500" />
                         <span>{req.travelers} traveler{req.travelers !== 1 ? "s" : ""}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-stone-700">
-                        <DollarSign className="h-4 w-4 text-amber-500" />
+                        <DollarSign className="h-4 w-4 text-sage-500" />
                         <span>{req.budget}</span>
                       </div>
                     </div>
@@ -120,7 +120,7 @@ export default function AdminRequestsClient({ requests: initial }: { requests: R
                           className={`text-xs px-3 py-1.5 rounded-lg border capitalize transition-colors ${
                             req.status === s
                               ? STATUS_COLORS[s]
-                              : "border-stone-200 text-stone-500 hover:border-amber-400"
+                              : "border-stone-200 text-stone-500 hover:border-sage-400"
                           }`}
                         >
                           {s}

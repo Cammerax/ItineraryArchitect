@@ -77,7 +77,7 @@ export default function AdminLocationsClient({ locations: initial }: { locations
 
       {/* Add form */}
       {showForm && (
-        <Card className="mb-6 border-amber-200">
+        <Card className="mb-6 border-sage-200">
           <CardContent className="p-5 space-y-4">
             <h3 className="font-semibold text-stone-800">New Location</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -141,11 +141,11 @@ export default function AdminLocationsClient({ locations: initial }: { locations
             <h2 className="text-sm font-semibold text-stone-500 uppercase tracking-wide mb-3">{label}</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {locs.map((loc) => (
-                <Card key={loc.id} className="hover:border-amber-300 transition-colors">
+                <Card key={loc.id} className="hover:border-sage-300 transition-colors">
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between">
                       <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                        <MapPin className="h-4 w-4 text-sage-600 flex-shrink-0 mt-0.5" />
                         <div>
                           <p className="font-medium text-stone-900 text-sm">{loc.name}</p>
                           {loc.country && <p className="text-xs text-stone-400">{loc.country}</p>}

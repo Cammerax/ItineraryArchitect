@@ -48,7 +48,7 @@ export default function ItineraryFilters({
           <span className="font-semibold text-stone-800">Filters</span>
         </div>
         {hasFilters && (
-          <button onClick={clearAll} className="text-xs text-amber-600 hover:text-amber-700 flex items-center gap-1">
+          <button onClick={clearAll} className="text-xs text-sage-600 hover:text-sage-700 flex items-center gap-1">
             <X className="h-3 w-3" />Clear
           </button>
         )}
@@ -64,7 +64,7 @@ export default function ItineraryFilters({
               onClick={() => setFilter("category", selectedCategory === cat.slug ? undefined : cat.slug)}
               className={`text-left text-sm px-3 py-2 rounded-lg transition-colors ${
                 selectedCategory === cat.slug
-                  ? "bg-amber-100 text-amber-800 font-medium"
+                  ? "bg-sage-100 text-sage-800 font-medium"
                   : "text-stone-600 hover:bg-stone-50"
               }`}
             >
@@ -84,7 +84,7 @@ export default function ItineraryFilters({
               onClick={() => setFilter("continent", selectedContinent === c.value ? undefined : c.value)}
               className={`text-left text-sm px-3 py-2 rounded-lg transition-colors ${
                 selectedContinent === c.value
-                  ? "bg-amber-100 text-amber-800 font-medium"
+                  ? "bg-sage-100 text-sage-800 font-medium"
                   : "text-stone-600 hover:bg-stone-50"
               }`}
             >
@@ -107,7 +107,7 @@ export default function ItineraryFilters({
                   onClick={() => setFilter("location", selectedLocation === loc.slug ? undefined : loc.slug)}
                   className={`text-left text-sm px-3 py-2 rounded-lg transition-colors ${
                     selectedLocation === loc.slug
-                      ? "bg-amber-100 text-amber-800 font-medium"
+                      ? "bg-sage-100 text-sage-800 font-medium"
                       : "text-stone-600 hover:bg-stone-50"
                   }`}
                 >

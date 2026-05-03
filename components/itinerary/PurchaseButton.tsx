@@ -43,7 +43,7 @@ export default function PurchaseButton({ itineraryId, price }: Props) {
 
   return (
     <div>
-      <Button className="w-full" size="lg" onClick={handlePurchase} disabled={loading}>
+      <Button className="w-full bg-blush-500 hover:bg-blush-600 text-white" size="lg" onClick={handlePurchase} disabled={loading}>
         {loading ? (
           <Loader2 className="h-4 w-4 animate-spin" />
         ) : (

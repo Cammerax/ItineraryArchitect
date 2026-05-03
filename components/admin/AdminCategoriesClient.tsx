@@ -50,7 +50,7 @@ export default function AdminCategoriesClient({ categories: initial }: { categor
       </div>
 
       {showForm && (
-        <Card className="mb-6 border-amber-200">
+        <Card className="mb-6 border-sage-200">
           <CardContent className="p-5 space-y-4">
             <h3 className="font-semibold text-stone-800">New Category</h3>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -78,7 +78,7 @@ export default function AdminCategoriesClient({ categories: initial }: { categor
         {categories.map((cat) => (
           <Card key={cat.id}>
             <CardContent className="p-4 flex items-start gap-3">
-              <Tag className="h-5 w-5 text-amber-600 mt-0.5 flex-shrink-0" />
+              <Tag className="h-5 w-5 text-sage-600 mt-0.5 flex-shrink-0" />
               <div>
                 <p className="font-semibold text-stone-900">{cat.name}</p>
                 <p className="text-xs text-stone-500 mt-0.5">{cat.description || "No description"}</p>

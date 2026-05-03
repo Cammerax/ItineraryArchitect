@@ -38,7 +38,7 @@ interface ItineraryPDFProps {
 }
 
 const C = {
-  amber:       "#d97706",
+  sage:       "#d97706",
   amberDark:   "#92400e",
   amberLight:  "#fef3c7",
   amberMid:    "#f59e0b",
@@ -97,10 +97,10 @@ function calcDuration(start: string, end: string) {
 const s = StyleSheet.create({
   // ─── Cover ────────────────────────────────────────────────────────────────
   cover:            { flex: 1, backgroundColor: C.white },
-  coverTopBar:      { height: 8, backgroundColor: C.amber },
+  coverTopBar:      { height: 8, backgroundColor: C.sage },
   coverBody:        { flex: 1, padding: 48, paddingTop: 64, justifyContent: "space-between" },
   coverTopSection:  { flex: 1, justifyContent: "center" },
-  coverEyebrow:     { fontSize: 9, letterSpacing: 3, color: C.amber, fontFamily: "Helvetica-Bold", marginBottom: 16 },
+  coverEyebrow:     { fontSize: 9, letterSpacing: 3, color: C.sage, fontFamily: "Helvetica-Bold", marginBottom: 16 },
   coverTitle:       { fontSize: 34, fontFamily: "Helvetica-Bold", color: C.stone900, lineHeight: 1.15, marginBottom: 12 },
   coverSubtitle:    { fontSize: 14, color: C.stone600, fontFamily: "Helvetica", marginBottom: 28 },
   coverMeta:        { flexDirection: "row", gap: 8, flexWrap: "wrap", marginBottom: 40 },
@@ -112,13 +112,13 @@ const s = StyleSheet.create({
   coverDisclaimer:  { fontSize: 7, color: C.stone400, marginTop: 8, fontFamily: "Helvetica" },
   coverPriceBox:    { backgroundColor: C.stone50, borderRadius: 8, padding: 16, borderWidth: 1, borderColor: C.stone200, marginBottom: 32 },
   coverPriceLabel:  { fontSize: 8, color: C.stone400, fontFamily: "Helvetica", letterSpacing: 1, marginBottom: 4 },
-  coverPriceValue:  { fontSize: 28, fontFamily: "Helvetica-Bold", color: C.amber },
+  coverPriceValue:  { fontSize: 28, fontFamily: "Helvetica-Bold", color: C.sage },
   coverPriceSub:    { fontSize: 8, color: C.stone500, fontFamily: "Helvetica", marginTop: 2 },
 
   // ─── Overview page ────────────────────────────────────────────────────────
   page:             { padding: 48, backgroundColor: C.white },
   pageHeader:       { flexDirection: "row", alignItems: "center", marginBottom: 4 },
-  pageSectionLabel: { fontSize: 7, letterSpacing: 2.5, color: C.amber, fontFamily: "Helvetica-Bold" },
+  pageSectionLabel: { fontSize: 7, letterSpacing: 2.5, color: C.sage, fontFamily: "Helvetica-Bold" },
   pageDivider:      { height: 1, flex: 1, backgroundColor: C.stone200, marginLeft: 10, marginTop: 1 },
   sectionGap:       { height: 24 },
   smallGap:         { height: 12 },
@@ -129,7 +129,7 @@ const s = StyleSheet.create({
 
   // highlights
   highlightRow:     { flexDirection: "row", alignItems: "flex-start", marginBottom: 6 },
-  highlightDot:     { width: 6, height: 6, borderRadius: 3, backgroundColor: C.amber, marginTop: 3, marginRight: 8 },
+  highlightDot:     { width: 6, height: 6, borderRadius: 3, backgroundColor: C.sage, marginTop: 3, marginRight: 8 },
   highlightText:    { fontSize: 10, color: C.stone700, fontFamily: "Helvetica", flex: 1, lineHeight: 1.5 },
 
   // includes / excludes
@@ -145,7 +145,7 @@ const s = StyleSheet.create({
   // ─── Day pages ────────────────────────────────────────────────────────────
   dayHeader:        { marginBottom: 16 },
   dayNumberBadge:   { flexDirection: "row", alignItems: "center", marginBottom: 6 },
-  dayNumber:        { fontSize: 7, letterSpacing: 2.5, color: C.white, fontFamily: "Helvetica-Bold", backgroundColor: C.amber, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 3 },
+  dayNumber:        { fontSize: 7, letterSpacing: 2.5, color: C.white, fontFamily: "Helvetica-Bold", backgroundColor: C.sage, paddingHorizontal: 8, paddingVertical: 3, borderRadius: 3 },
   dayTitle:         { fontSize: 18, fontFamily: "Helvetica-Bold", color: C.stone900, marginBottom: 4 },
   dayDesc:          { fontSize: 9, color: C.stone500, fontFamily: "Helvetica", lineHeight: 1.5 },
 

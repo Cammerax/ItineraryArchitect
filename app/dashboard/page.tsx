@@ -30,8 +30,8 @@ export default async function DashboardPage() {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
-            <User className="h-5 w-5 text-amber-700" />
+          <div className="w-10 h-10 rounded-xl bg-sage-100 flex items-center justify-center">
+            <User className="h-5 w-5 text-sage-700" />
           </div>
           <div>
             <h1 className="text-3xl font-bold text-stone-900">My Itineraries</h1>
@@ -60,8 +60,8 @@ export default async function DashboardPage() {
               return (
                 <Link key={purchase.id} href={`/itineraries/${it.slug}`}>
                   <Card className="hover:shadow-lg transition-shadow h-full group cursor-pointer">
-                    <div className="h-36 bg-gradient-to-br from-amber-100 to-stone-200 flex items-center justify-center relative rounded-t-xl">
-                      <Globe2 className="h-10 w-10 text-amber-300" />
+                    <div className="h-36 bg-gradient-to-br from-sage-100 to-stone-200 flex items-center justify-center relative rounded-t-xl">
+                      <Globe2 className="h-10 w-10 text-sage-300" />
                       <div className="absolute top-2 left-2">
                         <Badge>{it.category.name}</Badge>
                       </div>
@@ -70,8 +70,8 @@ export default async function DashboardPage() {
                       </div>
                     </div>
                     <CardContent className="p-4">
-                      <p className="text-xs text-amber-700 font-medium mb-1">{it.location.name}</p>
-                      <h3 className="font-bold text-stone-900 mb-2 group-hover:text-amber-700 transition-colors text-sm">
+                      <p className="text-xs text-sage-700 font-medium mb-1">{it.location.name}</p>
+                      <h3 className="font-bold text-stone-900 mb-2 group-hover:text-sage-700 transition-colors text-sm">
                         {it.title}
                       </h3>
                       <div className="flex items-center justify-between text-xs text-stone-500">

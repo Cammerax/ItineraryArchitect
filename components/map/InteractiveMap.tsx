@@ -115,7 +115,7 @@ export default function InteractiveMap({ locations, initialContinent }: Props) {
           <span key={i} className="flex items-center gap-2">
             {i > 0 && <ChevronLeft className="h-3 w-3 rotate-180 text-stone-400" />}
             {b.onClick ? (
-              <button onClick={b.onClick} className="hover:text-amber-700 font-medium transition-colors">
+              <button onClick={b.onClick} className="hover:text-sage-700 font-medium transition-colors">
                 {b.label}
               </button>
             ) : (
@@ -128,7 +128,7 @@ export default function InteractiveMap({ locations, initialContinent }: Props) {
       {/* Legend */}
       <div className="flex items-center gap-4 text-xs text-stone-600">
         <div className="flex items-center gap-1.5">
-          <div className="w-4 h-3 rounded bg-amber-500" />
+          <div className="w-4 h-3 rounded bg-sage-500" />
           <span>Itineraries available</span>
         </div>
         <div className="flex items-center gap-1.5">
@@ -152,9 +152,9 @@ export default function InteractiveMap({ locations, initialContinent }: Props) {
                 <button
                   key={key}
                   onClick={() => handleContinentClick(key)}
-                  className="group bg-white rounded-xl border-2 border-stone-200 hover:border-amber-500 hover:shadow-lg p-5 text-center transition-all"
+                  className="group bg-white rounded-xl border-2 border-stone-200 hover:border-sage-500 hover:shadow-lg p-5 text-center transition-all"
                 >
-                  <Globe2 className="h-10 w-10 text-amber-400 group-hover:text-amber-600 mx-auto mb-2 transition-colors" />
+                  <Globe2 className="h-10 w-10 text-sage-400 group-hover:text-sage-600 mx-auto mb-2 transition-colors" />
                   <p className="font-semibold text-stone-800 text-sm">{label}</p>
                   {count > 0 ? (
                     <Badge variant="success" className="mt-2 text-xs">{count} destination{count !== 1 ? "s" : ""}</Badge>
@@ -226,7 +226,7 @@ export default function InteractiveMap({ locations, initialContinent }: Props) {
                     href={`/itineraries?location=${l.slug}`}
                     className={`text-xs text-center px-2 py-1.5 rounded font-medium transition-colors ${
                       l.hasItinerary
-                        ? "bg-amber-100 text-amber-800 hover:bg-amber-200"
+                        ? "bg-sage-100 text-sage-800 hover:bg-sage-200"
                         : "bg-stone-100 text-stone-500 hover:bg-stone-200"
                     }`}
                   >
@@ -319,7 +319,7 @@ export default function InteractiveMap({ locations, initialContinent }: Props) {
                     href={l.hasItinerary ? `/itineraries?location=${l.slug}` : "#"}
                     className={`flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border transition-colors ${
                       l.hasItinerary
-                        ? "border-amber-400 bg-amber-50 text-amber-800 hover:bg-amber-100"
+                        ? "border-sage-400 bg-sage-50 text-sage-800 hover:bg-sage-100"
                         : "border-stone-200 bg-stone-50 text-stone-400 cursor-not-allowed"
                     }`}
                   >

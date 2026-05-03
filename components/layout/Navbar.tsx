@@ -17,11 +17,14 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-stone-200 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-[#faf8f5]/95 backdrop-blur border-b border-stone-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-amber-700 tracking-tight">The Itinerary Architect</span>
+            <span className="text-2xl font-bold tracking-tight">
+              <span className="text-sage-700">The Itinerary</span>{" "}
+              <span className="text-blush-500">Architect</span>
+            </span>
           </Link>
 
           <div className="hidden md:flex items-center gap-1">
@@ -29,7 +32,7 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-amber-700 hover:bg-amber-50 transition-colors"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-sage-700 hover:bg-sage-50 transition-colors"
               >
                 <Icon className="h-4 w-4" />
                 {label}
@@ -62,7 +65,7 @@ export default function Navbar() {
             ) : (
               <>
                 <Link href="/login"><Button variant="ghost" size="sm">Sign In</Button></Link>
-                <Link href="/register"><Button size="sm">Get Started</Button></Link>
+                <Link href="/register"><Button size="sm" className="bg-blush-500 hover:bg-blush-600 text-white">Get Started</Button></Link>
               </>
             )}
           </div>
@@ -79,7 +82,7 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-amber-700 hover:bg-amber-50"
+              className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-sage-700 hover:bg-sage-50"
               onClick={() => setOpen(false)}
             >
               <Icon className="h-4 w-4" />
@@ -108,7 +111,7 @@ export default function Navbar() {
             ) : (
               <>
                 <Link href="/login" onClick={() => setOpen(false)}><Button variant="ghost" size="sm" className="w-full">Sign In</Button></Link>
-                <Link href="/register" onClick={() => setOpen(false)}><Button size="sm" className="w-full">Get Started</Button></Link>
+                <Link href="/register" onClick={() => setOpen(false)}><Button size="sm" className="w-full bg-blush-500 hover:bg-blush-600 text-white">Get Started</Button></Link>
               </>
             )}
           </div>

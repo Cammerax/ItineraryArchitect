@@ -69,7 +69,7 @@ interface ItineraryData {
 // ── Activity type config ───────────────────────────────────────────────────
 
 const ACTIVITY_TYPES = [
-  { value: "attraction",    label: "Attraction",     icon: Camera,    color: "bg-amber-500",   light: "bg-amber-50",   text: "text-amber-700",   border: "border-amber-200" },
+  { value: "attraction",    label: "Attraction",     icon: Camera,    color: "bg-sage-500",   light: "bg-sage-50",   text: "text-sage-700",   border: "border-sage-200" },
   { value: "restaurant",   label: "Dining",          icon: Utensils,  color: "bg-green-500",   light: "bg-green-50",   text: "text-green-700",   border: "border-green-200" },
   { value: "transport",    label: "Transport",       icon: PlaneIcon, color: "bg-blue-500",    light: "bg-blue-50",    text: "text-blue-700",    border: "border-blue-200"  },
   { value: "accommodation",label: "Accommodation",   icon: Building2, color: "bg-purple-500",  light: "bg-purple-50",  text: "text-purple-700",  border: "border-purple-200"},
@@ -228,14 +228,14 @@ function SortableActivityCard({ activity, dayIndex, activityIndex, totalActiviti
               type="time"
               value={activity.startTime}
               onChange={e => onUpdate("startTime", e.target.value)}
-              className="w-[5.5rem] text-xs font-mono bg-stone-50 border border-stone-200 rounded px-1.5 py-1 focus:ring-1 focus:ring-amber-400 focus:border-amber-400 outline-none"
+              className="w-[5.5rem] text-xs font-mono bg-stone-50 border border-stone-200 rounded px-1.5 py-1 focus:ring-1 focus:ring-sage-400 focus:border-sage-400 outline-none"
             />
             <ChevronRight className="h-3 w-3 text-stone-400 flex-shrink-0" />
             <input
               type="time"
               value={activity.endTime}
               onChange={e => onUpdate("endTime", e.target.value)}
-              className="w-[5.5rem] text-xs font-mono bg-stone-50 border border-stone-200 rounded px-1.5 py-1 focus:ring-1 focus:ring-amber-400 focus:border-amber-400 outline-none"
+              className="w-[5.5rem] text-xs font-mono bg-stone-50 border border-stone-200 rounded px-1.5 py-1 focus:ring-1 focus:ring-sage-400 focus:border-sage-400 outline-none"
             />
           </div>
           {duration && (
@@ -361,7 +361,7 @@ function ListEditor({
   onAdd,
   onRemove,
   placeholder,
-  accentColor = "amber",
+  accentColor = "sage",
 }: {
   label: string;
   items: string[];
@@ -369,9 +369,9 @@ function ListEditor({
   onAdd: () => void;
   onRemove: (i: number) => void;
   placeholder: string;
-  accentColor?: "amber" | "green" | "red";
+  accentColor?: "sage" | "green" | "red";
 }) {
-  const dotClass = accentColor === "green" ? "bg-green-500" : accentColor === "red" ? "bg-red-400" : "bg-amber-500";
+  const dotClass = accentColor === "green" ? "bg-green-500" : accentColor === "red" ? "bg-red-400" : "bg-sage-500";
   return (
     <Card>
       <CardContent className="p-5">
@@ -381,7 +381,7 @@ function ListEditor({
             <h3 className="font-semibold text-stone-800 text-sm">{label}</h3>
             <span className="text-xs text-stone-400">({items.length})</span>
           </div>
-          <button onClick={onAdd} className="flex items-center gap-1 text-xs text-amber-600 hover:text-amber-700 font-medium">
+          <button onClick={onAdd} className="flex items-center gap-1 text-xs text-sage-600 hover:text-sage-700 font-medium">
             <Plus className="h-3.5 w-3.5" /> Add
           </button>
         </div>
@@ -691,7 +691,7 @@ export default function ItineraryEditor({ locations, categories, initialData }: 
       <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
         <div>
           <div className="flex items-center gap-2 mb-0.5">
-            <Pencil className="h-4 w-4 text-amber-500" />
+            <Pencil className="h-4 w-4 text-sage-500" />
             <h1 className="text-2xl font-bold text-stone-900">
               {data.id ? "Edit Itinerary" : "New Itinerary"}
             </h1>
@@ -740,7 +740,7 @@ export default function ItineraryEditor({ locations, categories, initialData }: 
             onClick={() => setActiveTab(tab)}
             className={`px-5 py-2 rounded-lg text-sm font-medium transition-all capitalize ${
               activeTab === tab
-                ? "bg-white text-amber-700 shadow-sm font-semibold"
+                ? "bg-white text-sage-700 shadow-sm font-semibold"
                 : "text-stone-500 hover:text-stone-700"
             }`}
           >
@@ -760,7 +760,7 @@ export default function ItineraryEditor({ locations, categories, initialData }: 
           <Card>
             <CardContent className="p-6 space-y-4">
               <div className="flex items-center gap-2 mb-1">
-                <div className="w-1.5 h-6 rounded bg-amber-500" />
+                <div className="w-1.5 h-6 rounded bg-sage-500" />
                 <h2 className="font-semibold text-stone-800">Basic Information</h2>
               </div>
               <div>
@@ -837,7 +837,7 @@ export default function ItineraryEditor({ locations, categories, initialData }: 
               onAdd={() => addToList("highlights")}
               onRemove={i => removeFromList("highlights", i)}
               placeholder="e.g., Sunrise at the Brooklyn Bridge"
-              accentColor="amber"
+              accentColor="sage"
             />
             <ListEditor
               label="What's Included"
@@ -882,7 +882,7 @@ export default function ItineraryEditor({ locations, categories, initialData }: 
                   days: [...d.days, newDay(d.days.length + 1)],
                   duration: String(d.days.length + 1),
                 }))}
-                className="flex items-center gap-1 text-xs text-amber-600 hover:text-amber-700 font-medium px-2.5 py-1.5 rounded-lg hover:bg-amber-50 transition-colors"
+                className="flex items-center gap-1 text-xs text-sage-600 hover:text-sage-700 font-medium px-2.5 py-1.5 rounded-lg hover:bg-sage-50 transition-colors"
               >
                 <Plus className="h-3.5 w-3.5" /> Add Day
               </button>
@@ -895,7 +895,7 @@ export default function ItineraryEditor({ locations, categories, initialData }: 
               {/* Day header */}
               <div className="flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-stone-50 to-white border-b border-stone-100">
                 {/* Day badge */}
-                <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-600 text-white flex items-center justify-center text-sm font-bold shadow-sm">
+                <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-sage-600 text-white flex items-center justify-center text-sm font-bold shadow-sm">
                   {day.dayNumber}
                 </div>
 
@@ -984,7 +984,7 @@ export default function ItineraryEditor({ locations, categories, initialData }: 
                   {/* Add activity */}
                   <button
                     onClick={() => addActivity(di)}
-                    className="mt-3 w-full flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-dashed border-stone-200 text-stone-400 hover:border-amber-400 hover:text-amber-600 hover:bg-amber-50 transition-all text-sm font-medium"
+                    className="mt-3 w-full flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-dashed border-stone-200 text-stone-400 hover:border-sage-400 hover:text-sage-600 hover:bg-sage-50 transition-all text-sm font-medium"
                   >
                     <Plus className="h-4 w-4" />
                     Add Activity

@@ -64,9 +64,9 @@ export default async function ItineraryDetailPage({
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 text-sm text-stone-500 mb-3">
-          <Link href="/itineraries" className="hover:text-amber-600">Itineraries</Link>
+          <Link href="/itineraries" className="hover:text-sage-600">Itineraries</Link>
           <span>/</span>
-          <Link href={`/itineraries?location=${itinerary.location.slug}`} className="hover:text-amber-600">
+          <Link href={`/itineraries?location=${itinerary.location.slug}`} className="hover:text-sage-600">
             {itinerary.location.name}
           </Link>
           <span>/</span>
@@ -90,9 +90,9 @@ export default async function ItineraryDetailPage({
       </div>
 
       {/* Not a travel agency disclaimer */}
-      <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-6 flex items-start gap-2">
-        <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5 flex-shrink-0" />
-        <p className="text-xs text-amber-800">
+      <div className="bg-sage-50 border border-sage-200 rounded-lg p-3 mb-6 flex items-start gap-2">
+        <AlertTriangle className="h-4 w-4 text-sage-600 mt-0.5 flex-shrink-0" />
+        <p className="text-xs text-sage-800">
           <strong>Reminder:</strong> The Itinerary Architect is not a travel agency. This guide is for planning purposes only.
           No accommodations, tickets, or flights are booked on your behalf.
         </p>
@@ -106,13 +106,13 @@ export default async function ItineraryDetailPage({
             <Card>
               <CardContent className="p-6">
                 <h2 className="font-bold text-stone-900 mb-4 flex items-center gap-2">
-                  <Star className="h-5 w-5 text-amber-500" />
+                  <Star className="h-5 w-5 text-sage-500" />
                   Trip Highlights
                 </h2>
                 <ul className="grid sm:grid-cols-2 gap-2">
                   {highlights.map((h, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-stone-700">
-                      <CheckCircle2 className="h-4 w-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-sage-500 mt-0.5 flex-shrink-0" />
                       {h}
                     </li>
                   ))}
@@ -167,7 +167,7 @@ export default async function ItineraryDetailPage({
                   href={`/api/itineraries/${itinerary.id}/export`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-sm text-amber-700 hover:text-amber-800 font-medium border border-amber-300 hover:border-amber-400 rounded-lg px-3 py-1.5 transition-colors"
+                  className="flex items-center gap-1.5 text-sm text-sage-700 hover:text-sage-800 font-medium border border-sage-300 hover:border-sage-400 rounded-lg px-3 py-1.5 transition-colors"
                 >
                   <Download className="h-3.5 w-3.5" />
                   Export PDF
@@ -175,9 +175,9 @@ export default async function ItineraryDetailPage({
               )}
             </div>
             {!purchased ? (
-              <Card className="border-2 border-dashed border-amber-300 bg-amber-50/50">
+              <Card className="border-2 border-dashed border-sage-300 bg-sage-50/50">
                 <CardContent className="p-8 text-center">
-                  <Lock className="h-10 w-10 text-amber-400 mx-auto mb-3" />
+                  <Lock className="h-10 w-10 text-sage-400 mx-auto mb-3" />
                   <h3 className="font-semibold text-stone-800 mb-2">
                     Full Itinerary Unlocked After Purchase
                   </h3>
@@ -187,13 +187,13 @@ export default async function ItineraryDetailPage({
                   </p>
                   <div className="flex justify-center gap-3 flex-wrap">
                     {itinerary.days.slice(0, 3).map((day) => (
-                      <div key={day.id} className="bg-white rounded-lg border border-amber-200 px-4 py-2 text-sm">
-                        <span className="font-medium text-amber-700">Day {day.dayNumber}:</span>{" "}
+                      <div key={day.id} className="bg-white rounded-lg border border-sage-200 px-4 py-2 text-sm">
+                        <span className="font-medium text-sage-700">Day {day.dayNumber}:</span>{" "}
                         <span className="text-stone-600">{day.title}</span>
                       </div>
                     ))}
                     {itinerary.days.length > 3 && (
-                      <div className="bg-white rounded-lg border border-amber-200 px-4 py-2 text-sm text-stone-400">
+                      <div className="bg-white rounded-lg border border-sage-200 px-4 py-2 text-sm text-stone-400">
                         +{itinerary.days.length - 3} more days...
                       </div>
                     )}
@@ -204,14 +204,14 @@ export default async function ItineraryDetailPage({
               <div className="space-y-4">
                 {itinerary.days.map((day) => (
                   <Card key={day.id} className="overflow-hidden">
-                    <div className="bg-amber-700 text-white px-5 py-3">
+                    <div className="bg-gradient-to-r from-sage-700 to-sage-600 text-white px-5 py-3">
                       <div className="flex items-center gap-3">
-                        <span className="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-sm font-bold">
+                        <span className="w-8 h-8 rounded-full bg-blush-400 flex items-center justify-center text-sm font-bold text-white">
                           {day.dayNumber}
                         </span>
                         <div>
                           <p className="font-semibold">{day.title}</p>
-                          <p className="text-amber-200 text-xs">{day.description}</p>
+                          <p className="text-sage-200 text-xs">{day.description}</p>
                         </div>
                       </div>
                     </div>
@@ -225,12 +225,12 @@ export default async function ItineraryDetailPage({
                             return (
                               <div key={activity.id} className="flex gap-4 p-4 hover:bg-stone-50 transition-colors">
                                 <div className="flex-shrink-0 text-center w-16">
-                                  <p className="text-xs font-semibold text-amber-700">{activity.startTime}</p>
+                                  <p className="text-xs font-semibold text-sage-700">{activity.startTime}</p>
                                   <div className="my-1 w-px h-4 bg-stone-200 mx-auto" />
                                   <p className="text-xs text-stone-400">{activity.endTime}</p>
                                 </div>
-                                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center">
-                                  <Icon className="h-4 w-4 text-amber-700" />
+                                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-sage-50 flex items-center justify-center">
+                                  <Icon className="h-4 w-4 text-sage-700" />
                                 </div>
                                 <div className="flex-1 min-w-0">
                                   <p className="font-medium text-stone-900 text-sm">{activity.title}</p>
@@ -242,7 +242,7 @@ export default async function ItineraryDetailPage({
                                     </div>
                                   )}
                                   {activity.tips && (
-                                    <div className="mt-1.5 bg-amber-50 rounded-md px-2 py-1 text-xs text-amber-800">
+                                    <div className="mt-1.5 bg-sage-50 rounded-md px-2 py-1 text-xs text-sage-800">
                                       <strong>Tip:</strong> {activity.tips}
                                     </div>
                                   )}
@@ -263,10 +263,10 @@ export default async function ItineraryDetailPage({
         {/* Sidebar */}
         <div className="lg:col-span-1 space-y-4">
           {/* Purchase card */}
-          <Card className="sticky top-20 border-2 border-amber-200">
+          <Card className="sticky top-20 border-2 border-sage-200">
             <CardContent className="p-6">
               <div className="text-center mb-4">
-                <p className="text-3xl font-bold text-amber-700">{formatPrice(itinerary.price)}</p>
+                <p className="text-3xl font-bold text-sage-700">{formatPrice(itinerary.price)}</p>
                 <p className="text-xs text-stone-500 mt-1">One-time purchase · Lifetime access</p>
               </div>
 
@@ -280,7 +280,7 @@ export default async function ItineraryDetailPage({
                     href={`/api/itineraries/${itinerary.id}/export`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full bg-amber-600 hover:bg-amber-700 text-white rounded-lg py-2.5 px-4 text-sm font-medium transition-colors"
+                    className="flex items-center justify-center gap-2 w-full bg-blush-500 hover:bg-blush-600 text-white rounded-lg py-2.5 px-4 text-sm font-medium transition-colors"
                   >
                     <Download className="h-4 w-4" />
                     Download PDF
@@ -291,7 +291,7 @@ export default async function ItineraryDetailPage({
                   <PurchaseButton itineraryId={itinerary.id} price={itinerary.price} />
                   {!session && (
                     <p className="text-xs text-stone-500 text-center">
-                      <Link href="/login" className="text-amber-600 hover:underline">Sign in</Link> to purchase
+                      <Link href="/login" className="text-sage-600 hover:underline">Sign in</Link> to purchase
                     </p>
                   )}
                 </div>
@@ -299,15 +299,15 @@ export default async function ItineraryDetailPage({
 
               <div className="mt-4 pt-4 border-t border-stone-100 space-y-2">
                 <div className="flex items-center gap-2 text-xs text-stone-600">
-                  <Clock className="h-3.5 w-3.5 text-amber-500" />
+                  <Clock className="h-3.5 w-3.5 text-sage-500" />
                   {itinerary.duration} day itinerary
                 </div>
                 <div className="flex items-center gap-2 text-xs text-stone-600">
-                  <Globe2 className="h-3.5 w-3.5 text-amber-500" />
+                  <Globe2 className="h-3.5 w-3.5 text-sage-500" />
                   {itinerary.location.name}
                 </div>
                 <div className="flex items-center gap-2 text-xs text-stone-600">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-amber-500" />
+                  <CheckCircle2 className="h-3.5 w-3.5 text-sage-500" />
                   {itinerary.days.length} days planned
                 </div>
               </div>
@@ -318,7 +318,7 @@ export default async function ItineraryDetailPage({
           <Card className="bg-stone-50">
             <CardContent className="p-4">
               <div className="flex items-center gap-2 mb-2">
-                <Plane className="h-4 w-4 text-amber-600" />
+                <Plane className="h-4 w-4 text-sage-600" />
                 <p className="font-medium text-stone-800 text-sm">Find Your Flights</p>
               </div>
               <p className="text-xs text-stone-500 mb-3">

@@ -124,8 +124,8 @@ export default function CustomRequestForm() {
                 onClick={() => toggleActivity(act)}
                 className={`w-4 h-4 rounded border-2 flex items-center justify-center transition-colors ${
                   form.activities.includes(act)
-                    ? "bg-amber-600 border-amber-600"
-                    : "border-stone-300 group-hover:border-amber-400"
+                    ? "bg-sage-600 border-sage-600"
+                    : "border-stone-300 group-hover:border-sage-400"
                 }`}
               >
                 {form.activities.includes(act) && (
@@ -151,7 +151,7 @@ export default function CustomRequestForm() {
                 value={b}
                 checked={form.budget === b}
                 onChange={() => set("budget", b)}
-                className="accent-amber-600"
+                className="accent-sage-600"
               />
               <span className="text-sm text-stone-700">{b}</span>
             </label>

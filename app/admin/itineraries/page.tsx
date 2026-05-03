@@ -49,7 +49,7 @@ export default async function AdminItinerariesPage() {
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-lg font-bold text-amber-700">{formatPrice(it.price)}</span>
+                  <span className="text-lg font-bold text-sage-700">{formatPrice(it.price)}</span>
                   <PublishToggle id={it.id} published={it.published} />
                   <Link href={`/admin/itineraries/${it.id}/edit`}>
                     <Button variant="outline" size="sm"><Edit className="h-4 w-4" />Edit</Button>

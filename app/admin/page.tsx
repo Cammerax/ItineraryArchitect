@@ -36,7 +36,7 @@ export default async function AdminDashboard() {
   const [stats, activity] = await Promise.all([getStats(), getRecentActivity()]);
 
   const STAT_CARDS = [
-    { label: "Total Itineraries", value: stats.totalItineraries, icon: BookOpen, sub: `${stats.published} published`, color: "text-amber-600" },
+    { label: "Total Itineraries", value: stats.totalItineraries, icon: BookOpen, sub: `${stats.published} published`, color: "text-sage-600" },
     { label: "Locations", value: stats.locations, icon: MapPin, sub: "destinations", color: "text-blue-600" },
     { label: "Total Orders", value: stats.orders, icon: ShoppingBag, sub: `$${stats.revenue.toFixed(0)} revenue`, color: "text-green-600" },
     { label: "Pending Requests", value: stats.requests, icon: MessageSquare, sub: "awaiting review", color: "text-orange-600" },
@@ -76,16 +76,16 @@ export default async function AdminDashboard() {
       {/* Quick Actions */}
       <div className="grid md:grid-cols-3 gap-4 mb-8">
         <Link href="/admin/itineraries/new">
-          <Card className="hover:shadow-md hover:border-amber-300 transition-all cursor-pointer group">
+          <Card className="hover:shadow-md hover:border-sage-300 transition-all cursor-pointer group">
             <CardContent className="p-5">
-              <Plus className="h-8 w-8 text-amber-600 mb-2" />
+              <Plus className="h-8 w-8 text-sage-600 mb-2" />
               <p className="font-semibold text-stone-800">Create Itinerary</p>
               <p className="text-xs text-stone-500">Add a new travel plan with full day-by-day schedule</p>
             </CardContent>
           </Card>
         </Link>
         <Link href="/admin/locations">
-          <Card className="hover:shadow-md hover:border-amber-300 transition-all cursor-pointer group">
+          <Card className="hover:shadow-md hover:border-sage-300 transition-all cursor-pointer group">
             <CardContent className="p-5">
               <MapPin className="h-8 w-8 text-blue-500 mb-2" />
               <p className="font-semibold text-stone-800">Manage Locations</p>
@@ -94,7 +94,7 @@ export default async function AdminDashboard() {
           </Card>
         </Link>
         <Link href="/admin/requests">
-          <Card className="hover:shadow-md hover:border-amber-300 transition-all cursor-pointer group">
+          <Card className="hover:shadow-md hover:border-sage-300 transition-all cursor-pointer group">
             <CardContent className="p-5">
               <MessageSquare className="h-8 w-8 text-orange-500 mb-2" />
               <p className="font-semibold text-stone-800">Custom Requests</p>
@@ -111,7 +111,7 @@ export default async function AdminDashboard() {
           <CardContent className="p-5">
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-semibold text-stone-800">Recent Orders</h3>
-              <Link href="/admin/orders" className="text-xs text-amber-600 hover:underline">View all</Link>
+              <Link href="/admin/orders" className="text-xs text-sage-600 hover:underline">View all</Link>
             </div>
             {activity.recentOrders.length === 0 ? (
               <p className="text-sm text-stone-400">No orders yet</p>
@@ -136,7 +136,7 @@ export default async function AdminDashboard() {
           <CardContent className="p-5">
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-semibold text-stone-800">Custom Requests</h3>
-              <Link href="/admin/requests" className="text-xs text-amber-600 hover:underline">View all</Link>
+              <Link href="/admin/requests" className="text-xs text-sage-600 hover:underline">View all</Link>
             </div>
             {activity.recentRequests.length === 0 ? (
               <p className="text-sm text-stone-400">No requests yet</p>
